@@ -58,6 +58,17 @@
   --bs-body-line-height: 1.6;
   --bs-body-color: #212529;
   --bs-body-bg: #f8fafc;
+
+  /* Custom colors */
+  --ct-pink: #FB2E86;
+  --ct-red: #FB2448;
+  --ct-blue: #2F1AC4;
+  --ct-off-navy-blue: #3F509E;
+  --ct-navy-blues: #151875;
+  --ct-sky-blue: #F3F9FF;
+  --ct-pantone-blue: #E0D3F5;
+  --ct-purple: #7E33E0;
+  --ct-off-purple: #9F63B5;
 }
 
 *,
@@ -74,7 +85,7 @@
 
 body {
   margin: 0;
-  font-family: var(--bs-body-font-family);
+  font-family: Josefin Sans;
   font-size: var(--bs-body-font-size);
   font-weight: var(--bs-body-font-weight);
   line-height: var(--bs-body-line-height);
