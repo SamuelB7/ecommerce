@@ -24,16 +24,16 @@
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+        <nav class="navbar navbar-expand-lg header_1">
             <div class="container">
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
-                    <span class="navbar-toggler-icon"></span>
+                    <span class="navbar-toggler-icon navbar-light"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav me-auto">
                         <li class="nav-item">
-                            <p>user@email.com</p>
+                            <span>{{ Auth::user()->email ?? " " }}</span>
                         </li>
                     </ul>
 
@@ -43,13 +43,13 @@
                         @guest
                             @if (Route::has('login'))
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('login') }}">Login</a>
+                                    <a class="nav-link" href="{{ route('login') }}">{{ __('header.login') }}</a>
                                 </li>
                             @endif
 
                             @if (Route::has('register'))
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                    <a class="nav-link" href="{{ route('register') }}">{{ __('header.register') }}</a>
                                 </li>
                             @endif
                         @else
@@ -72,7 +72,7 @@
                             </li>
                         @endguest
                         <li class="nav-item">
-                            <select class="form-control changeLang">
+                            <select class="form-select changeLang">
                                 <option value="pt-br" {{ session()->get('locale') == 'pt-br' ? 'selected' : '' }}>Portugês</option>
                                 <option value="en" {{ session()->get('locale') == 'en' ? 'selected' : '' }}>English</option>
                             </select>
@@ -81,27 +81,29 @@
                 </div>
             </div>
         </nav>
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+        <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
                     {{ config('app.name', 'E-commerce') }}
                 </a>
-                <ul class="navbar-nav me-auto">
-                    <li class="nav-item">
-                        <a href="">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="">Pages</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="">Products</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="">Contact</a>
-                    </li>
-                </ul>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#header_2" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
+                    <span class="navbar-toggler-icon navbar-light"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="header_2">
+                    <ul class="navbar-nav me-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="">{{ __('header.home') }}</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="">{{ __('header.products') }}</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="">{{ __('header.contact') }}</a>
+                        </li>
+                    </ul>
+                </div>
                 <form class="d-flex">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <input class="form-control me-2" type="search" placeholder="{{ __('header.search_product') }}" aria-label="Search">
                     <button class="btn btn-outline-success" type="submit">Search</button>
                 </form>
             </div>
