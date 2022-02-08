@@ -79,6 +79,7 @@
 
 .header_1 {
   background: var(--ct-purple);
+  max-height: 35px !important
 }
 
 .header_1  .nav-link {
@@ -91,8 +92,21 @@
   color: #F1F1F1;
 }
 
-.header_1 .navbar-toggler {
-  
+.header_1 select {
+  height: 25px;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.header_2 .btn {
+  background: var(--ct-pink);
+  color: white;
+}
+
+.login_card .btn {
+  background: var(--ct-pink);
+  color: white;
+  border: none;
 }
 
 @media (prefers-reduced-motion: no-preference) {
