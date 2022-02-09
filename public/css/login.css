@@ -1,0 +1,5 @@
+.login_card .btn {
+    background: var(--ct-pink);
+    color: white;
+    border: none;
+}

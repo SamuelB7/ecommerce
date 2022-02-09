@@ -4,7 +4,7 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <div class="card">
+            <div class="card login_card">
                 <div class="card-header">{{ __('pages/register.register') }}</div>
 
                 <div class="card-body">

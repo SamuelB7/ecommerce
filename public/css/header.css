@@ -1,0 +1,25 @@
+.header_1 {
+    background: var(--ct-purple);
+    max-height: 35px !important
+}
+  
+.header_1  .nav-link {
+    text-decoration: none;
+    color: #F1F1F1;
+}
+  
+.header_1  .nav-link:hover {
+    text-decoration: underline;
+    color: #F1F1F1;
+}
+  
+.header_1 select {
+    height: 25px;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+  
+.header_2 .btn {
+    background: var(--ct-pink);
+    color: white;
+}

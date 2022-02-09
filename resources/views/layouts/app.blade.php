@@ -22,6 +22,9 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
+@php
+    $user = Auth::user();
+@endphp
 <body>
     <div id="app">
         <nav class="navbar navbar-expand-lg header_1">
@@ -33,7 +36,11 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav me-auto">
                         <li class="nav-item">
-                            <span>{{ Auth::user()->email ?? " " }}</span>
+                            @if(isset($user))
+                                @if($user->role == "admin")
+                                    <a class="nav-link" href="/admin">Área admin</a>
+                                @endif
+                            @endif
                         </li>
                     </ul>
 
@@ -92,13 +99,13 @@
                 <div class="collapse navbar-collapse" id="header_2">
                     <ul class="navbar-nav me-auto">
                         <li class="nav-item">
-                            <a class="nav-link" href="">{{ __('header.home') }}</a>
+                            <a class="nav-link" href="/home">{{ __('header.home') }}</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="">{{ __('header.products') }}</a>
+                            <a class="nav-link" href="#">{{ __('header.products') }}</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="">{{ __('header.contact') }}</a>
+                            <a class="nav-link" href="#">{{ __('header.contact') }}</a>
                         </li>
                     </ul>
                 </div>

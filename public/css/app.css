@@ -1,4 +1,6 @@
 @import url(https://fonts.googleapis.com/css?family=Nunito);
+@import "header.css";
+@import "login.css";
 @charset "UTF-8";
 /*!
  * Bootstrap v5.1.3 (https://getbootstrap.com/)
@@ -75,38 +77,6 @@
 *::before,
 *::after {
   box-sizing: border-box;
-}
-
-.header_1 {
-  background: var(--ct-purple);
-  max-height: 35px !important
-}
-
-.header_1  .nav-link {
-  text-decoration: none;
-  color: #F1F1F1;
-}
-
-.header_1  .nav-link:hover {
-  text-decoration: underline;
-  color: #F1F1F1;
-}
-
-.header_1 select {
-  height: 25px;
-  padding-top: 0;
-  padding-bottom: 0;
-}
-
-.header_2 .btn {
-  background: var(--ct-pink);
-  color: white;
-}
-
-.login_card .btn {
-  background: var(--ct-pink);
-  color: white;
-  border: none;
 }
 
 @media (prefers-reduced-motion: no-preference) {

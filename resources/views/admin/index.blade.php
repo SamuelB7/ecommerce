@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('home page') }}</div>
+                <div class="card-header">{{ __('Admin page') }}</div>
 
                 <div class="card-body">
                     @if (session('status'))
@@ -14,7 +14,7 @@
                         </div>
                     @endif
 
-                    {{ __('This is the home page') }}
+                    {{ __('This is the admin page') }}
                 </div>
             </div>
         </div>
