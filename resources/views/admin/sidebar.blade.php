@@ -1,10 +1,16 @@
 <!-- Main Sidebar Container -->
-<aside class="main-sidebar elevation-4">
+<aside class="main-sidebar sidebar-dark-primary elevation-4">
   <!-- Brand Logo -->
   <a href="/" class="brand-link">
     <!-- <img src="dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
          style="opacity: .8"> -->
     <span class="brand-text font-weight-light">E-commerce</span>
+    
+    <select class="form-select changeLang">
+      <option value="pt-br" {{ session()->get('locale') == 'pt-br' ? 'selected' : '' }}>Portugês</option>
+      <option value="en" {{ session()->get('locale') == 'en' ? 'selected' : '' }}>English</option>
+    </select>
+                        
   </a>
 
   <!-- Sidebar -->
@@ -24,9 +30,15 @@
       <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu">
         <!-- Add icons to the links using the .nav-icon class
              with font-awesome or any other icon font library -->
-        <li class="nav-item menu-open">
-          <a href="/admin/users" class="nav-link active">
+        <li class="nav-item">
+          <a href="/admin" class="nav-link">
             <i class="nav-icon fas fa-tachometer-alt"></i>
+            <p>Dashboard</p>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="/admin/users" class="nav-link">
+            <i class="nav-icon fa fa-users"></i>
             <p>
               Users
               <i class="right fas fa-angle-left"></i>
@@ -34,27 +46,64 @@
           </a>
           <ul class="nav nav-treeview">
             <li class="nav-item">
-              <a href="/admin/users" class="nav-link active">
+              <a href="/admin/users" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
-                <p>Active Page</p>
+                <p>Users list</p>
               </a>
             </li>
             <li class="nav-item">
               <a href="#" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
-                <p>Inactive Page</p>
+                <p>Create user</p>
               </a>
             </li>
           </ul>
         </li>
         <li class="nav-item">
           <a href="#" class="nav-link">
-            <i class="nav-icon fas fa-th"></i>
+            <i class="nav-icon fa fa-box"></i>
             <p>
-              Simple Link
-              <span class="right badge badge-danger">New</span>
+              Products
+              <i class="right fas fa-angle-left"></i>
             </p>
           </a>
+          <ul class="nav nav-treeview">
+            <li class="nav-item">
+              <a href="/admin/users" class="nav-link">
+                <i class="far fa-circle nav-icon"></i>
+                <p>Products list</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link">
+                <i class="far fa-circle nav-icon"></i>
+                <p>Create product</p>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link">
+            <i class="nav-icon fa fa-box"></i>
+            <p>
+              Products Categories
+              <i class="right fas fa-angle-left"></i>
+            </p>
+          </a>
+          <ul class="nav nav-treeview">
+            <li class="nav-item">
+              <a href="/admin/categories" class="nav-link">
+                <i class="far fa-circle nav-icon"></i>
+                <p>Categories list</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link">
+                <i class="far fa-circle nav-icon"></i>
+                <p>Create product category</p>
+              </a>
+            </li>
+          </ul>
         </li>
       </ul>
     </nav>
