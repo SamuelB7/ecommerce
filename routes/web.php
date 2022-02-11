@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\LangController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -21,7 +22,7 @@ use Illuminate\Support\Facades\Route;
  */
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 //Route::get('lang/home', [LangController::class, 'index']);
 Route::get('lang/change', [LangController::class, 'change'])->name('changeLang');
@@ -30,4 +31,6 @@ Route::get('lang/change', [LangController::class, 'change'])->name('changeLang')
 
 Route::middleware('isAdmin')->group(function() {
     Route::get('/admin', [AdminController::class, 'index']);
+
+    Route::get('/admin/users', [UserController::class, 'index']);
 });

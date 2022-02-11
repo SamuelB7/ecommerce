@@ -1,21 +1,14 @@
 @extends('layouts.app')
 
+@include('admin.sidebar')
+
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Admin page') }}</div>
-
-                <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
-
-                    {{ __('This is the admin page') }}
-                </div>
+<div class="content-wrapper">
+    <div class="content">
+        <div class="card">
+            <div class="card-header">Admin page</div>
+            <div class="card-body">
+                <p>This is admin page</p>
             </div>
         </div>
     </div>

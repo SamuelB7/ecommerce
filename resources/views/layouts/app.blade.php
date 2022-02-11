@@ -18,6 +18,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;700&display=swap" rel="stylesheet">
+    
+    <!-- AdminLTE -->
+    <script src="https://cdn.jsdelivr.net/npm/admin-lte@3.2/dist/js/adminlte.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/admin-lte@3.2/dist/css/adminlte.min.css">
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
@@ -27,6 +31,11 @@
 @endphp
 <body>
     <div id="app">
+        @if(Request::is('admin/*'))
+        <main class="py-4">
+            @yield('content')
+        </main>
+        @else
         <nav class="navbar navbar-expand-lg header_1">
             <div class="container">
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
@@ -36,11 +45,7 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav me-auto">
                         <li class="nav-item">
-                            @if(isset($user))
-                                @if($user->role == "admin")
-                                    <a class="nav-link" href="/admin">Área admin</a>
-                                @endif
-                            @endif
+                            
                         </li>
                     </ul>
 
@@ -71,6 +76,14 @@
                                                      document.getElementById('logout-form').submit();">
                                         {{ __('Logout') }}
                                     </a>
+
+                                    @if(isset($user))
+                                        @if($user->role == "admin")
+                                            <a class="dropdown-item" href="/admin">Área admin</a>
+                                        @else
+                                            <a class="dropdown-item" href="#">Minha conta</a>
+                                        @endif
+                                    @endif
 
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                         @csrf
@@ -115,10 +128,11 @@
                 </form>
             </div>
         </nav>
-
+        
         <main class="py-4">
             @yield('content')
         </main>
+        @endif
     </div>
 </body>
 
