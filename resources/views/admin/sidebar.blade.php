@@ -37,24 +37,24 @@
           </a>
         </li>
         <li class="nav-item">
-          <a href="/admin/users" class="nav-link">
+          <a href="{{ route('get_users') }}" class="nav-link">
             <i class="nav-icon fa fa-users"></i>
             <p>
-              Users
+              {{ __('admin/sidebar.users') }}
               <i class="right fas fa-angle-left"></i>
             </p>
           </a>
           <ul class="nav nav-treeview">
             <li class="nav-item">
-              <a href="/admin/users" class="nav-link">
+              <a href="{{ route('get_users') }}" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
-                <p>Users list</p>
+                <p>{{ __('admin/sidebar.users_list') }}</p>
               </a>
             </li>
             <li class="nav-item">
               <a href="#" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
-                <p>Create user</p>
+                <p>{{ __('admin/sidebar.user_create') }}</p>
               </a>
             </li>
           </ul>
@@ -63,7 +63,7 @@
           <a href="#" class="nav-link">
             <i class="nav-icon fa fa-box"></i>
             <p>
-              Products
+              {{ __('admin/sidebar.products') }}
               <i class="right fas fa-angle-left"></i>
             </p>
           </a>
@@ -71,13 +71,13 @@
             <li class="nav-item">
               <a href="/admin/users" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
-                <p>Products list</p>
+                <p>{{ __('admin/sidebar.products_list') }}</p>
               </a>
             </li>
             <li class="nav-item">
               <a href="#" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
-                <p>Create product</p>
+                <p>{{ __('admin/sidebar.product_create') }}</p>
               </a>
             </li>
           </ul>
@@ -86,7 +86,7 @@
           <a href="#" class="nav-link">
             <i class="nav-icon fa fa-box"></i>
             <p>
-              Products Categories
+              {{ __('admin/sidebar.categories') }}
               <i class="right fas fa-angle-left"></i>
             </p>
           </a>
@@ -94,13 +94,13 @@
             <li class="nav-item">
               <a href="/admin/categories" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
-                <p>Categories list</p>
+                <p>{{ __('admin/sidebar.categories_list') }}</p>
               </a>
             </li>
             <li class="nav-item">
               <a href="#" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
-                <p>Create product category</p>
+                <p>{{ __('admin/sidebar.category_create') }}</p>
               </a>
             </li>
           </ul>

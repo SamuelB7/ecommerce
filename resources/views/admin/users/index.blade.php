@@ -6,12 +6,14 @@
 <div class="content-wrapper">
     <div class="content">
         <div class="card">
-            <div class="card-header">User page</div>
+            <div class="card-header">{{ __('admin/users/index.users_list') }}</div>
             <div class="card-body">
                 <table class="table">
                     <thead>
-                        <th>Name</th>
-                        <th>Email</th>
+                        <th>{{ __('admin/users/index.name') }}</th>
+                        <th>{{ __('admin/users/index.email') }}</th>
+                        <th>{{ __('admin/users/index.role') }}</th>
+                        <th>{{ __('admin/users/index.actions') }}</th>
                     </thead>
                     <tbody>
                         @foreach($users as $user)
@@ -19,6 +21,10 @@
                             <td>{{ $user->name }}</td>
                             <td>{{ $user->email }}</td>
                             <td>{{ $user->role }}</td>
+                            <td>
+                                <a href="{{ route('show_user', [$user->id]) }}" class="btn btn-light">{{ __('admin/users/index.details') }}</a>
+                                <a href="{{ route('edit_user', [$user->id]) }}" class="btn btn-light">{{ __('admin/users/index.edit') }}</a>
+                            </td>
                         </tr>
                         @endforeach
                     </tbody>

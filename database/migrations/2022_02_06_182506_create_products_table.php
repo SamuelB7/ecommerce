@@ -22,6 +22,7 @@ class CreateProductsTable extends Migration
                 ->on('categories')
             ;
             $table->decimal('price', $precision = 10, $scale = 2);
+            $table->integer('quantity');
             $table->softDeletes();
             $table->timestamps();
         });

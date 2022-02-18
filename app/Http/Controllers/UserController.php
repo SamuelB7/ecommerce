@@ -12,4 +12,16 @@ class UserController extends Controller
 
         return view('admin.users.index', compact('users'));
     }
+
+    public function show($id) {
+        $user = User::find($id);
+
+        return view('admin.users.show', compact('user'));
+    }
+
+    public function edit($id) {
+        $user = User::find($id);
+
+        return view('admin.users.edit', compact('user'));
+    }
 }

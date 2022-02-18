@@ -82,7 +82,7 @@
 
                                     @if(isset($user))
                                         @if($user->role == "admin")
-                                            <a class="dropdown-item" href="/admin">Área admin</a>
+                                            <a class="dropdown-item" href="{{route('admin')}}">Área admin</a>
                                         @else
                                             <a class="dropdown-item" href="#">Minha conta</a>
                                         @endif

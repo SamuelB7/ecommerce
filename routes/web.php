@@ -30,7 +30,9 @@ Route::get('lang/change', [LangController::class, 'change'])->name('changeLang')
 
 
 Route::middleware('isAdmin')->group(function() {
-    Route::get('/admin', [AdminController::class, 'index']);
+    Route::get('/admin', [AdminController::class, 'index'])->name('admin');
 
-    Route::get('/admin/users', [UserController::class, 'index']);
+    Route::get('/admin/users', [UserController::class, 'index'])->name('get_users');
+    Route::get('/admin/users/{id}', [UserController::class, 'show'])->name('show_user');
+    Route::get('/admin/users/edit/{id}', [UserController::class, 'edit'])->name('edit_user');
 });
