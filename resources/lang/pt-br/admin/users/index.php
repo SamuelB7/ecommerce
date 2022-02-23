@@ -7,5 +7,6 @@ return [
     'role' => 'Função',
     'actions' =>  'Ações',
     'details' => 'Detalhes',
-    'edit' => 'Editar'
+    'edit' => 'Editar',
+    'delete' => 'Deletar'
 ];

@@ -37,7 +37,7 @@
           </a>
         </li>
         <li class="nav-item">
-          <a href="{{ route('get_users') }}" class="nav-link">
+          <a href="{{ route('users.index') }}" class="nav-link">
             <i class="nav-icon fa fa-users"></i>
             <p>
               {{ __('admin/sidebar.users') }}
@@ -46,13 +46,13 @@
           </a>
           <ul class="nav nav-treeview">
             <li class="nav-item">
-              <a href="{{ route('get_users') }}" class="nav-link">
+              <a href="{{ route('users.index') }}" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
                 <p>{{ __('admin/sidebar.users_list') }}</p>
               </a>
             </li>
             <li class="nav-item">
-              <a href="#" class="nav-link">
+              <a href="{{ route('users.create') }}" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
                 <p>{{ __('admin/sidebar.user_create') }}</p>
               </a>

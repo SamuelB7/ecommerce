@@ -32,7 +32,14 @@ Route::get('lang/change', [LangController::class, 'change'])->name('changeLang')
 Route::middleware('isAdmin')->group(function() {
     Route::get('/admin', [AdminController::class, 'index'])->name('admin');
 
-    Route::get('/admin/users', [UserController::class, 'index'])->name('get_users');
-    Route::get('/admin/users/{id}', [UserController::class, 'show'])->name('show_user');
-    Route::get('/admin/users/edit/{id}', [UserController::class, 'edit'])->name('edit_user');
+    Route::get('/admin/users', [UserController::class, 'index'])->name('users.index');
+    Route::get('/admin/users/create', [UserController::class, 'create'])->name('users.create');
+    Route::post('/admin/users', [UserController::class, 'store'])->name('users.store');
+    Route::get('/admin/users/{id}', [UserController::class, 'show'])->name('users.show');
+    Route::get('/admin/users/{id}/edit', [UserController::class, 'edit'])->name('users.edit');
+    Route::put('/admin/users/{id}', [UserController::class, 'update'])->name('users.update');
+    //Route::delete('/admin/users/{id}', [UserController::class, 'softDelete'])->name('users.softDelete');
+    Route::delete('/admin/users/{id}', [UserController::class, 'destroy'])->name('users.destroy');
+
+    
 });
