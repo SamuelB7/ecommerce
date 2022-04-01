@@ -50,8 +50,29 @@ class UserController extends Controller
     }
 
     public function update(Request $request, $id) {
-        //To do
-        return response()->json("Route ok!");
+        //return response()->json('Route ok');
+
+        $user = User::find($id);
+
+        if($request['name'] != null && $request['name'] != '') {
+            $user->name = $request['name'];
+        }
+
+        if($request['email'] != null && $request['email'] != '') {
+            $user->email = $request['email'];
+        }
+
+        if($request['password'] != null && $request['password'] != '') {
+            $user->password = Hash::make($request['password']);
+        }
+
+        if($request['role'] != null && $request['role'] != '') {
+            $user->role = $request['role'];
+        }
+        
+        $user->save();
+
+        return redirect("/admin/users")->with('success', 'User updated!');
     }
 
     public function softDelete($id) {
