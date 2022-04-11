@@ -6,7 +6,7 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="m-0">{{ __('admin/users/create.user_create') }}</h1>
+                    <h1 class="m-0">{{ __('admin/products/create.product_create') }}</h1>
                 </div><!-- /.col -->
             </div><!-- /.row -->
         </div><!-- /.container-fluid -->
@@ -18,42 +18,57 @@
         <div class="container">
             <div class="card">
                 <div class="card-body">
-                    <form method="POST" action="{{ route('users.store') }}">
+                    <form method="POST" action="{{ route('products.store') }}">
                         @csrf
                         <div class="form-group">
-                            <label for="name">{{ __('admin/users/create.name') }}</label>
+                            <label for="name">{{ __('admin/products/create.name') }}</label>
                             <input class="form-control" type="text" name="name" id="name" required>
                             @error('name')
                             <span class="text-danger">{{ $message }}</span>
                             @enderror
                         </div>
                         <div class="form-group">
-                            <label for="email">{{ __('admin/users/create.email') }}</label>
-                            <input class="form-control" type="email" name="email" id="email" required>
-                            @error('email')
+                            <label for="description">{{ __('admin/products/create.description') }}</label>
+                            <input class="form-control" type="text-area" name="description" id="description" required>
+                            @error('description')
                             <span class="text-danger">{{ $message }}</span>
                             @enderror
                         </div>
                         <div class="form-group">
-                            <label for="password">{{ __('admin/users/create.password') }}</label>
-                            <input class="form-control" type="password" name="password" id="password" required>
-                            @error('password')
+                            <label for="price">{{ __('admin/products/create.price') }}</label>
+                            <input class="form-control" type="number" name="price" id="price" required>
+                            @error('price')
                             <span class="text-danger">{{ $message }}</span>
                             @enderror
                         </div>
                         <div class="form-group">
-                            <label for="role">{{ __('admin/users/create.role') }}</label>
-                            <select class="form-control" name="role" id="role" required>
-                                <option value="admin">Admin</option>
-                                <option value="agent">Agent</option>
-                                <option value="customer">Customer</option>
+                            <label for="quantity">{{ __('admin/products/create.quantity') }}</label>
+                            <input class="form-control" type="number" name="quantity" id="quantity" required>
+                            @error('price')
+                            <span class="text-danger">{{ $message }}</span>
+                            @enderror
+                        </div>
+                        <div class="form-group">
+                            <label for="category_id">{{ __('admin/products/create.category') }}</label>
+                            <select class="form-control" name="category_id" id="category" required>
+                                @foreach($categories as $category)
+                                <option value="{{ $category->id }}">{{ $category->name }}</option>
+                                @endforeach
                             </select>
-                            @error('role')
+                            @error('category_id')
                             <span class="text-danger">{{ $message }}</span>
                             @enderror
                         </div>
 
-                        <button type="submit" class="btn btn-primary">{{ __('admin/users/create.submit') }}</button>
+                        <div class="custom-file mb-3">
+                            <input type="file" class="custom-file-input" id="customFile" name="image[]" multiple>
+                            <label class="custom-file-label" for="customFile">{{ __('admin/products/create.images') }}</label>
+                            @error('image')
+                                <span class="text-danger">{{ $message }}</span>
+                            @enderror
+                        </div>
+
+                        <button type="submit" class="btn btn-primary">{{ __('admin/products/create.submit') }}</button>
                     </form>
                 </div>
             </div>

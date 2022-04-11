@@ -12,8 +12,6 @@ class Category extends Model
 
     protected $table = 'categories';
 
-    protected $with = ['products'];
-
     protected $fillable = [
         'name'
     ];
@@ -21,8 +19,4 @@ class Category extends Model
     protected $visible = [
         'name'
     ];
-
-    public function products() {
-        return $this->hasMany(Product::class, 'category_id');
-    }
 }
