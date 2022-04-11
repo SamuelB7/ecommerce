@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\LangController;
+use App\Http\Controllers\ProductController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -41,5 +42,5 @@ Route::middleware('isAdmin')->group(function() {
     //Route::delete('/admin/users/{id}', [UserController::class, 'softDelete'])->name('users.softDelete');
     Route::delete('/admin/users/{id}', [UserController::class, 'destroy'])->name('users.destroy');
 
-    
+    Route::get('/admin/products', [ProductController::class, 'index'])->name('products.index');
 });

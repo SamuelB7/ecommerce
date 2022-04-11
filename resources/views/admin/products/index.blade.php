@@ -6,7 +6,7 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="m-0">{{ __('admin/users/index.users_list') }}</h1>
+                    <h1 class="m-0">{{ __('admin/products/index.products_list') }}</h1>
                 </div><!-- /.col -->
             </div><!-- /.row -->
         </div><!-- /.container-fluid -->
@@ -27,21 +27,25 @@
             <div class="card-body">
                 <table class="table">
                     <thead>
-                        <th>{{ __('admin/users/index.name') }}</th>
-                        <th>{{ __('admin/users/index.email') }}</th>
-                        <th>{{ __('admin/users/index.role') }}</th>
-                        <th>{{ __('admin/users/index.actions') }}</th>
+                        <th>{{ __('admin/products/index.id') }}</th>
+                        <th>{{ __('admin/products/index.name') }}</th>
+                        <th>{{ __('admin/products/index.price') }}</th>
+                        <th>{{ __('admin/products/index.quantity') }}</th>
+                        <th>{{ __('admin/products/index.category') }}</th>
+                        <th>{{ __('admin/products/index.actions') }}</th>
                     </thead>
                     <tbody>
-                    @foreach($users as $user)
+                    @foreach($products as $product)
                         <tr>
-                            <td class="align-middle">{{ $user->name }}</td>
-                            <td class="align-middle">{{ $user->email }}</td>
-                            <td class="align-middle">{{ $user->role }}</td>
+                            <td class="align-middle">{{ $product->id }}</td>
+                            <td class="align-middle">{{ $product->name }}</td>
+                            <td class="align-middle">R${{ $product->price }}</td>
+                            <td class="align-middle">{{ $product->quantity }}</td>
+                            <td class="align-middle">{{ $product->category->name }}</td>
                             <td class="d-flex justify-content-around align-middle">
-                                <a href="{{ route('users.show', [$user->id]) }}" class="btn btn-light">{{ __('admin/users/index.details') }}</a>
-                                <a href="{{ route('users.edit', [$user->id]) }}" class="btn btn-light">{{ __('admin/users/index.edit') }}</a>
-                                <form style="margin: 0;" method="POST" action="{{ route('users.destroy', [$user->id]) }}">
+                                <a href="" class="btn btn-light">{{ __('admin/products/index.details') }}</a>
+                                <a href="" class="btn btn-light">{{ __('admin/products/index.edit') }}</a>
+                                <form style="margin: 0;" method="POST" action="">
                                     @csrf
                                     @method('delete')
                                     <button type="submit" class="btn btn-danger" onclick="return confirm('Tem certeza?')">{{ __('admin/users/index.delete') }}</button>
