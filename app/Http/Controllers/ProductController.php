@@ -4,7 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Models\Category;
 use App\Models\Product;
+use App\Models\ProductsImages;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Intervention\Image\Facades\Image;
 
 class ProductController extends Controller
 {
@@ -39,14 +42,29 @@ class ProductController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
-        Product::insert([
+    {   
+        $product = Product::create([
             'name' => $request->name,
             'description' => $request->description,
             'category_id' => $request->category_id,
             'quantity' => $request->quantity,
             'price' => $request->price
         ]);
+        
+        $images = $request->file('image');
+        
+        foreach($images as $image) {
+            $name_generated = hexdec(uniqid()).'.'.$image->getClientOriginalExtension();
+            $image->move(public_path('img/products/'), $name_generated);
+
+            $img_path = 'img/products/'.$name_generated;
+
+            ProductsImages::insert([
+                'image' => $img_path,
+                'product_id' => $product->id,
+                'created_at' => Carbon::now()
+            ]);
+        }
 
         return redirect('admin/products')->with('success', 'Produto adicionado com sucesso');
     }

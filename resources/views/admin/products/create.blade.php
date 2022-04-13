@@ -18,7 +18,7 @@
         <div class="container">
             <div class="card">
                 <div class="card-body">
-                    <form method="POST" action="{{ route('products.store') }}">
+                    <form method="POST" action="{{ route('products.store') }}" enctype="multipart/form-data">
                         @csrf
                         <div class="form-group">
                             <label for="name">{{ __('admin/products/create.name') }}</label>
