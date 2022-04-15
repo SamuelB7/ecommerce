@@ -7,7 +7,6 @@ use App\Models\Product;
 use App\Models\ProductsImages;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
-use Intervention\Image\Facades\Image;
 
 class ProductController extends Controller
 {
@@ -103,9 +102,33 @@ class ProductController extends Controller
      * @param  \App\Models\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Product $product)
+    public function update(Request $request, $id)
     {
-        //
+        $product = Product::find($id);
+
+        if($request['name'] != null && $request['name'] != '') {
+            $product->name = $request['name'];
+        }
+
+        if($request['description'] != null && $request['description'] != '') {
+            $product->description = $request['description'];
+        }
+
+        if($request['price'] != null && $request['price'] != '') {
+            $product->price = $request['price'];
+        }
+
+        if($request['quantity'] != null && $request['quantity'] != '') {
+            $product->quantity = $request['quantity'];
+        }
+
+        if($request['category_id'] != null && $request['category_id'] != '') {
+            $product->category_id = $request['category_id'];
+        }
+
+        $product->save();
+
+        return redirect("/admin/products/$id")->with('success', 'produto editado com sucesso');
     }
 
     /**
