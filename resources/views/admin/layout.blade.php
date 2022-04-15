@@ -247,6 +247,29 @@
                 </li>
               </ul>
             </li>
+            <li class="nav-item menu">
+              <a href="{{ route('products.index') }}" class="nav-link">
+                <i class="fa fa-box nav-icon"></i>
+                <p>
+                  {{ __('admin/sidebar.categories') }}
+                  <i class="right fas fa-angle-left"></i>
+                </p>
+              </a>
+              <ul class="nav nav-treeview">
+                <li class="nav-item">
+                  <a href="{{ route('products.index') }}" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>{{ __('admin/sidebar.categories_list') }}s</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="{{ route('products.create') }}" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>{{ __('admin/sidebar.category_create') }}</p>
+                  </a>
+                </li>
+              </ul>
+            </li>
           </ul>
 
         </nav>

@@ -12,7 +12,7 @@ class Product extends Model
 
     protected $table = 'products';
 
-    protected $with = ['category'];
+    protected $with = ['category', 'images'];
 
     protected $fillable = [
         'name',
@@ -33,5 +33,9 @@ class Product extends Model
 
     public function category() {
         return $this->belongsTo(Category::class);
+    }
+
+    public function images() {
+        return $this->hasMany(ProductsImages::class);
     }
 }

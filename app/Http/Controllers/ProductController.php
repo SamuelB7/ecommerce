@@ -75,9 +75,11 @@ class ProductController extends Controller
      * @param  \App\Models\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function show(Product $product)
+    public function show($id)
     {
-        //
+        $product = Product::find($id);
+
+        return view('admin.products.show', compact('product'));
     }
 
     /**
@@ -86,9 +88,12 @@ class ProductController extends Controller
      * @param  \App\Models\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function edit(Product $product)
+    public function edit($id)
     {
-        echo 'OK!';
+        $product = Product::find($id);
+        $categories = Category::all();
+
+        return view('admin.products.edit', compact('product', 'categories'));
     }
 
     /**
@@ -109,8 +114,10 @@ class ProductController extends Controller
      * @param  \App\Models\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Product $product)
+    public function destroy($id)
     {
-        //
+        Product::destroy($id);
+
+        return redirect('/admin/products')->with('success', 'Produto deletado com sucesso');
     }
 }

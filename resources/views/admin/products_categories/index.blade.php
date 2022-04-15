@@ -6,7 +6,7 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="m-0">{{ __('admin/products/index.products_list') }}</h1>
+                    <h1 class="m-0">{{ __('admin/categories/index.categories_list') }}</h1>
                 </div><!-- /.col -->
             </div><!-- /.row -->
         </div><!-- /.container-fluid -->
@@ -27,25 +27,19 @@
             <div class="card-body">
                 <table class="table">
                     <thead>
-                        <th>{{ __('admin/products/index.id') }}</th>
-                        <th>{{ __('admin/products/index.name') }}</th>
-                        <th>{{ __('admin/products/index.price') }}</th>
-                        <th>{{ __('admin/products/index.quantity') }}</th>
-                        <th>{{ __('admin/products/index.category') }}</th>
-                        <th>{{ __('admin/products/index.actions') }}</th>
+                        <th>{{ __('admin/categories/index.id') }}</th>
+                        <th>{{ __('admin/categories/index.name') }}</th>
+                        <th>{{ __('admin/categories/index.actions') }}</th>
                     </thead>
                     <tbody>
-                    @foreach($products as $product)
+                    @foreach($categories as $category)
                         <tr>
-                            <td class="align-middle">{{ $product->id }}</td>
-                            <td class="align-middle">{{ $product->name }}</td>
-                            <td class="align-middle">R${{ $product->price }}</td>
-                            <td class="align-middle">{{ $product->quantity }}</td>
-                            <td class="align-middle">{{ $product->category->name }}</td>
+                            <td class="align-middle">{{ $category->id }}</td>
+                            <td class="align-middle">{{ $category->name }}</td>
                             <td class="d-flex justify-content-around align-middle">
-                                <a href="{{ route('products.show', [$product->id]) }}" class="btn btn-light">{{ __('admin/products/index.details') }}</a>
-                                <a href="" class="btn btn-light">{{ __('admin/products/index.edit') }}</a>
-                                <form style="margin: 0;" method="POST" action="{{ route('products.destroy', [$product->id]) }}">
+                                <a href="" class="btn btn-light">{{ __('admin/categories/index.details') }}</a>
+                                <a href="" class="btn btn-light">{{ __('admin/categories/index.edit') }}</a>
+                                <form style="margin: 0;" method="POST" action="">
                                     @csrf
                                     @method('delete')
                                     <button type="submit" class="btn btn-danger" onclick="return confirm('Tem certeza?')">{{ __('admin/users/index.delete') }}</button>
