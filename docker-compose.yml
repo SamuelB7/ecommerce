@@ -21,8 +21,8 @@ services:
     build:
         context: ./
         dockerfile: Dockerfile
-    image: llp
-    container_name: llp-app
+    image: ecommerce
+    container_name: ecommerce-app
     restart: unless-stopped
     working_dir: /var/www/
     volumes:
