@@ -28,8 +28,6 @@ Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('ho
 //Route::get('lang/home', [LangController::class, 'index']);
 Route::get('lang/change', [LangController::class, 'change'])->name('changeLang');
 
-
-
 Route::middleware('isAdmin')->group(function() {
     Route::get('/admin', [AdminController::class, 'index'])->name('admin');
 

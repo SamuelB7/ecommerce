@@ -25,6 +25,15 @@
         @endif
         <div class="card">
             <div class="card-body">
+                <div class="input-group">
+                    <input type="search" class="form-control" name="product" id="">
+                    <div class="input-group-append">
+                        <button type="submit" class="btn btn-default">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+                </div>  
+
                 <table class="table">
                     <thead>
                         <th>{{ __('admin/products/index.id') }}</th>
