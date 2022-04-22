@@ -39,9 +39,9 @@
                             <td class="align-middle">{{ $user->email }}</td>
                             <td class="align-middle">{{ $user->role }}</td>
                             <td class="d-flex justify-content-around align-middle">
-                                <a href="{{ route('users.show', [$user->id]) }}" class="btn btn-light">{{ __('admin/users/index.details') }}</a>
-                                <a href="{{ route('users.edit', [$user->id]) }}" class="btn btn-light">{{ __('admin/users/index.edit') }}</a>
-                                <form style="margin: 0;" method="POST" action="{{ route('users.destroy', [$user->id]) }}">
+                                <a href="{{ route('admin.users.show', [$user->id]) }}" class="btn btn-light">{{ __('admin/users/index.details') }}</a>
+                                <a href="{{ route('admin.users.edit', [$user->id]) }}" class="btn btn-light">{{ __('admin/users/index.edit') }}</a>
+                                <form style="margin: 0;" method="POST" action="{{ route('admin.users.destroy', [$user->id]) }}">
                                     @csrf
                                     @method('delete')
                                     <button type="submit" class="btn btn-danger" onclick="return confirm('Tem certeza?')">{{ __('admin/users/index.delete') }}</button>

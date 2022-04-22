@@ -202,7 +202,7 @@
               </a>
             </li>
             <li class="nav-item menu">
-              <a href="{{ route('users.index') }}" class="nav-link">
+              <a href="{{ route('admin.users.index') }}" class="nav-link">
                 <i class="nav-icon fa fa-users"></i>
                 <p>
                   {{ __('admin/sidebar.users') }}
@@ -211,13 +211,13 @@
               </a>
               <ul class="nav nav-treeview">
                 <li class="nav-item">
-                  <a href="{{ route('users.index') }}" class="nav-link">
+                  <a href="{{ route('admin.users.index') }}" class="nav-link">
                     <i class="far fa-circle nav-icon"></i>
                     <p>{{ __('admin/sidebar.users_list') }}s</p>
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a href="{{ route('users.create') }}" class="nav-link">
+                  <a href="{{ route('admin.users.create') }}" class="nav-link">
                     <i class="far fa-circle nav-icon"></i>
                     <p>{{ __('admin/sidebar.user_create') }}</p>
                   </a>
@@ -225,7 +225,7 @@
               </ul>
             </li>
             <li class="nav-item menu">
-              <a href="{{ route('products.index') }}" class="nav-link">
+              <a href="{{ route('admin.products.index') }}" class="nav-link">
                 <i class="fa fa-box nav-icon"></i>
                 <p>
                   {{ __('admin/sidebar.products') }}
@@ -234,13 +234,13 @@
               </a>
               <ul class="nav nav-treeview">
                 <li class="nav-item">
-                  <a href="{{ route('products.index') }}" class="nav-link">
+                  <a href="{{ route('admin.products.index') }}" class="nav-link">
                     <i class="far fa-circle nav-icon"></i>
                     <p>{{ __('admin/sidebar.products_list') }}s</p>
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a href="{{ route('products.create') }}" class="nav-link">
+                  <a href="{{ route('admin.products.create') }}" class="nav-link">
                     <i class="far fa-circle nav-icon"></i>
                     <p>{{ __('admin/sidebar.product_create') }}</p>
                   </a>
@@ -248,7 +248,7 @@
               </ul>
             </li>
             <li class="nav-item menu">
-              <a href="{{ route('products.index') }}" class="nav-link">
+              <a href="{{ route('admin.products.index') }}" class="nav-link">
                 <i class="fa fa-box nav-icon"></i>
                 <p>
                   {{ __('admin/sidebar.categories') }}
@@ -257,13 +257,13 @@
               </a>
               <ul class="nav nav-treeview">
                 <li class="nav-item">
-                  <a href="{{ route('products.index') }}" class="nav-link">
+                  <a href="{{ route('admin.products.index') }}" class="nav-link">
                     <i class="far fa-circle nav-icon"></i>
                     <p>{{ __('admin/sidebar.categories_list') }}</p>
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a href="{{ route('products.create') }}" class="nav-link">
+                  <a href="{{ route('admin.products.create') }}" class="nav-link">
                     <i class="far fa-circle nav-icon"></i>
                     <p>{{ __('admin/sidebar.category_create') }}</p>
                   </a>

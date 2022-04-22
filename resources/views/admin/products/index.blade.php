@@ -52,8 +52,8 @@
                             <td class="align-middle">{{ $product->quantity }}</td>
                             <td class="align-middle">{{ $product->category->name }}</td>
                             <td class="d-flex justify-content-around align-middle">
-                                <a href="{{ route('products.show', [$product->id]) }}" class="btn btn-light">{{ __('admin/products/index.details') }}</a>
-                                <a href="{{ route('products.edit', [$product->id]) }}" class="btn btn-light">{{ __('admin/products/index.edit') }}</a>
+                                <a href="{{ route('admin.products.show', [$product->id]) }}" class="btn btn-light">{{ __('admin/products/index.details') }}</a>
+                                <a href="{{ route('admin.products.edit', [$product->id]) }}" class="btn btn-light">{{ __('admin/products/index.edit') }}</a>
                                 <form style="margin: 0;" method="POST" action="{{ route('products.destroy', [$product->id]) }}">
                                     @csrf
                                     @method('delete')

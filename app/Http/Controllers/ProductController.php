@@ -74,11 +74,15 @@ class ProductController extends Controller
      * @param  \App\Models\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Request $request, $id)
     {
         $product = Product::find($id);
 
-        return view('admin.products.show', compact('product'));
+        if($request->route()->getPrefix() == '/admin') {
+            return view('admin.products.show', compact('product'));
+        } else {
+            return view('products.show', compact('product'));
+        }
     }
 
     /**

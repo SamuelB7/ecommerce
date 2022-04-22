@@ -22,8 +22,17 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function index()
+    public function index(Request $request)
     {
+        if(isset($request['product_search'])) {
+            $searched_products = Product::where('name', 'like', '%' . $request['product_search'] . '%')
+                ->paginate(20)
+                ->withQueryString()
+            ;
+
+            return view('home', compact('searched_products'));
+        }
+
         $latest_products = Product::orderBy('created_at', 'desc')
             ->take(20)
             ->get()

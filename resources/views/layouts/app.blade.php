@@ -125,9 +125,11 @@
                         </li>
                     </ul>
                 </div>
-                <form class="d-flex">
-                    <input class="form-control me-2" type="search" placeholder="{{ __('header.search_product') }}" aria-label="Search">
-                    <button class="btn" type="submit">Search</button>
+                <form action="{{ route('home') }}" method="GET">
+                    <div class="d-flex">
+                        <input name="product_search" class="form-control mr-2" type="search" placeholder="{{ __('header.search_product') }}" aria-label="Search">
+                        <button class="btn" type="submit">Search</button>
+                    </div>
                 </form>
             </div>
         </nav>

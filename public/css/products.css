@@ -2,7 +2,17 @@
     text-align: center;
 }
 
+.product_card h5 {
+    margin-top: 0.5rem;
+}
+
 .product_card img {
     width: 250px;
     height: 250px;
+}
+
+.products_container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1.5rem;
 }

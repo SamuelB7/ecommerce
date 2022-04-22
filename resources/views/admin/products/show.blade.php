@@ -55,11 +55,11 @@
             <hr>
             <div class="d-flex justify-content-start">
                 @if(sizeof($product->images) != 0)
-                @foreach($product->images as $image)
-                <div class="col">
-                    <img style="width: 100px; height: 100px;" src="{{ $image->image }}" alt="image">
-                </div>
-                @endforeach
+                    @foreach($product->images as $image)
+                        
+                        <img width="250px" height="250px" src="{{ $image->image }}" alt="image">
+                    
+                    @endforeach
                 @endif
             </div>
             <hr>

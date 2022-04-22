@@ -18,7 +18,7 @@
         <div class="container">
             <div class="card">
                 <div class="card-body">
-                    <form method="POST" action="{{ route('users.store') }}">
+                    <form method="POST" action="{{ route('admin.users.store') }}">
                         @csrf
                         <div class="form-group">
                             <label for="name">{{ __('admin/users/create.name') }}</label>
