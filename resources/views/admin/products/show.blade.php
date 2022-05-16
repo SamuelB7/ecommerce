@@ -57,15 +57,15 @@
                 @if(sizeof($product->images) != 0)
                     @foreach($product->images as $image)
                         
-                        <img width="250px" height="250px" src="{{ $image->image }}" alt="image">
+                        <img width="200px" height="200px" src="{{ url($image->image) }}" alt="image">
                     
                     @endforeach
                 @endif
             </div>
             <hr>
             <div class="d-flex justify-content-start">
-                <a href="{{ route('products.edit', [$product->id]) }}" class="btn btn-warning mr-2">Editar</a>
-                <form style="margin: 0;" method="POST" action="{{ route('products.destroy', [$product->id]) }}">
+                <a href="{{ route('admin.products.edit', [$product->id]) }}" class="btn btn-warning mr-2">Editar</a>
+                <form style="margin: 0;" method="POST" action="{{ route('admin.products.destroy', [$product->id]) }}">
                     @csrf
                     @method('delete')
                     <button type="submit" class="btn btn-danger" onclick="return confirm('Tem certeza?')">Deletar</button>
