@@ -248,7 +248,7 @@
               </ul>
             </li>
             <li class="nav-item menu">
-              <a href="{{ route('admin.products.index') }}" class="nav-link">
+              <a href="{{ route('categories.index') }}" class="nav-link">
                 <i class="fa fa-box nav-icon"></i>
                 <p>
                   {{ __('admin/sidebar.categories') }}
@@ -257,13 +257,13 @@
               </a>
               <ul class="nav nav-treeview">
                 <li class="nav-item">
-                  <a href="{{ route('admin.products.index') }}" class="nav-link">
+                  <a href="{{ route('categories.index') }}" class="nav-link">
                     <i class="far fa-circle nav-icon"></i>
                     <p>{{ __('admin/sidebar.categories_list') }}</p>
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a href="{{ route('admin.products.create') }}" class="nav-link">
+                  <a href="{{ route('categories.create') }}" class="nav-link">
                     <i class="far fa-circle nav-icon"></i>
                     <p>{{ __('admin/sidebar.category_create') }}</p>
                   </a>

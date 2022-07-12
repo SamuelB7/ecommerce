@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LangController;
 use App\Http\Controllers\ProductController;
@@ -51,6 +52,9 @@ Route::middleware('isAdmin')->group(function () {
         Route::get('/products/{id}', [ProductController::class, 'show'])->name('admin.products.show');
         Route::put('/products/{id}', [ProductController::class, 'update'])->name('admin.products.update');
         Route::delete('/products/{id}', [ProductController::class, 'destroy'])->name('admin.products.destroy');
+
+        Route::get('/categories', [CategoryController::class, 'index'])->name('categories.index');
+        Route::get('/categories/create', [CategoryController::class, 'create'])->name('categories.create');
     });
 });
 

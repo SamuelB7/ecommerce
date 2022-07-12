@@ -36,9 +36,8 @@
                         <tr>
                             <td class="align-middle">{{ $category->id }}</td>
                             <td class="align-middle">{{ $category->name }}</td>
-                            <td class="d-flex justify-content-around align-middle">
-                                <a href="" class="btn btn-light">{{ __('admin/categories/index.details') }}</a>
-                                <a href="" class="btn btn-light">{{ __('admin/categories/index.edit') }}</a>
+                            <td class="d-flex align-middle">
+                                <a href="" class="btn btn-light mr-2">{{ __('admin/categories/index.edit') }}</a>
                                 <form style="margin: 0;" method="POST" action="">
                                     @csrf
                                     @method('delete')
@@ -49,7 +48,7 @@
                     @endforeach
                     </tbody>
                 </table>
-                {{ $products->links('pagination::bootstrap-4') }}
+                {{ $categories->links('pagination::bootstrap-4') }}
             </div>
         </div>
     </section>
