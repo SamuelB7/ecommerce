@@ -6,7 +6,7 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="m-0">Criar nova categoria de produto</h1>
+                    <h1 class="m-0">{{ __('admin/categories/create.categories_create') }}</h1>
                 </div><!-- /.col -->
             </div><!-- /.row -->
         </div><!-- /.container-fluid -->
@@ -18,17 +18,17 @@
         <div class="container">
             <div class="card">
                 <div class="card-body">
-                    <form method="POST" action="" enctype="multipart/form-data">
+                    <form method="POST" action="{{ route('categories.store') }}">
                         @csrf
                         <div class="form-group">
-                            <label for="name">Nome</label>
+                            <label for="name">{{ __('admin/categories/create.name') }}</label>
                             <input class="form-control" type="text" name="name" id="name" required>
                             @error('name')
-                            <span class="text-danger">{{ $message }}</span>
+                                <span class="text-danger">{{ $message }}</span>
                             @enderror
                         </div>
                         
-                        <button type="submit" class="btn btn-primary">{{ __('admin/products/create.submit') }}</button>
+                        <button type="submit" class="btn btn-primary">{{ __('admin/categories/create.submit') }}</button>
                     </form>
                 </div>
             </div>

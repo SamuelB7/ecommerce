@@ -37,7 +37,13 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Category::create($request->toArray());
+
+        if(session()->get('locale') == 'pt-br') {
+            return redirect('/admin/categories')->with('success','Categoria salva');
+        } else {
+            return redirect('/admin/categories')->with('success','Category saved');
+        }
     }
 
     /**

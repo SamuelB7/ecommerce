@@ -44,6 +44,12 @@
         <li class="nav-item d-none d-sm-inline-block">
           <a href="#" class="nav-link">Contact</a>
         </li>
+        <li class="nav-item d-none d-sm-inline-block">
+          <select class="form-select form-control changeLang">
+              <option value="pt-br" {{ session()->get('locale') == 'pt-br' ? 'selected' : '' }}>Portugês</option>
+              <option value="en" {{ session()->get('locale') == 'en' ? 'selected' : '' }}>English</option>
+          </select>
+        </li>
       </ul>
 
       <!-- Right navbar links -->
@@ -333,6 +339,14 @@
   <script src="/dist/js/demo.js"></script>
   <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
   <script src="/dist/js/pages/dashboard.js"></script>
+
+  <script>
+    var url = "{{ route('changeLang') }}";
+
+    $(".changeLang").change(function(){
+        window.location.href = url + "?lang="+ $(this).val();
+    });
+  </script>
 </body>
 
 </html>

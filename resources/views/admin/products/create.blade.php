@@ -18,7 +18,7 @@
         <div class="container">
             <div class="card">
                 <div class="card-body">
-                    <form method="POST" action="{{ route('products.store') }}" enctype="multipart/form-data">
+                    <form method="POST" action="{{ route('admin.products.store') }}" enctype="multipart/form-data">
                         @csrf
                         <div class="form-group">
                             <label for="name">{{ __('admin/products/create.name') }}</label>
@@ -68,6 +68,10 @@
                             @enderror
                         </div>
 
+                        <div class="d-flex" id="img_preview_row">
+                            
+                        </div>
+
                         <button type="submit" class="btn btn-primary">{{ __('admin/products/create.submit') }}</button>
                     </form>
                 </div>
@@ -75,4 +79,21 @@
         </div>
     </section>
     <!-- /.content -->
+
+    <script>
+        customFile.onchange = evt => {
+            let files = customFile.files
+            if (files) {
+                //console.log(files)
+                for(let i = 0; i < files.length; i++) {
+                    //let img = `<img id="img_preview_${i}" src="#" alt="">`
+                    let img = document.createElement('img')
+                    document.getElementById('img_preview_row').appendChild(img)
+                    img.src = URL.createObjectURL(files[i])
+                    img.style.maxHeight = "300px"
+                    img.style.maxWidth = "300px"
+                }
+            }
+        }
+    </script>
 @endsection
